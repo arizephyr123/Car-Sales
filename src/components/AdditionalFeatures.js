@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AdditionalFeature from './AdditionalFeature';
+import { addFeature, removeAdded } from '../actions/actions'
 
 const AdditionalFeatures = props => {
-  console.log(props)
+  //console.log(props)
   return (
     <div className="content">
       <h4>Additional Features</h4>
@@ -21,28 +22,15 @@ const AdditionalFeatures = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state);
   return{
-  // additionalPrice: 0,
-  // car: {
-  //   price: 26395,
-  //   name: "2019 Ford Mustang",
-  //   image:
-  //     "https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg",
-  //   features: []
-  // },
-  // store: [
-  //   { id: 1, name: "V-6 engine", price: 1500 },
-  //   { id: 2, name: "Racing detail package", price: 1500 },
-  //   { id: 3, name: "Premium sound system", price: 500 },
-  //   { id: 4, name: "Rear spoiler", price: 250 }
-  // ]
-  }
-}
-
-
+  additionalPrice: state.additionalPrice,
+  car: state.car,
+  store: state.store
+  };
+};
 
 export default connect(
   mapStateToProps,
-  {}
+  { addFeature, removeAdded }
   )(AdditionalFeatures);

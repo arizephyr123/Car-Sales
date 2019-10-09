@@ -1,4 +1,8 @@
-import React from 'react';
+import React from 'react';import { connect } from 'react-redux';
+import { addFeature, removeAdded } from '../actions/actions'
+
+
+
 
 const AddedFeature = props => {
   //console.log(props);
@@ -11,4 +15,16 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+const mapStateToProps = state => {
+  console.log(state);
+  return{
+  additionalPrice: state.additionalPrice,
+  car: state.car,
+  store: state.store
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { addFeature, removeAdded }
+  )(AddedFeature);

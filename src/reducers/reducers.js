@@ -1,3 +1,5 @@
+import { ADD_FEATURE, REMOVE_ADDED } from '../actions/actions'
+
 const InitialState = {
   additionalPrice: 0,
   car: {
@@ -16,13 +18,13 @@ const InitialState = {
 };
 
 export const reducer = (state = InitialState, action) => {
-  console.log(action);
+  console.log(state);
   switch (action.type) {
     case ADD_FEATURE:
       // remove from additional feature
       // move to added feature
       // update amounts
-      console.log(state);
+      //console.log(state);
       return {
         ...state
       };
@@ -31,7 +33,7 @@ export const reducer = (state = InitialState, action) => {
       // remove from added feature
       // move to additional feature
       // update amounts
-      console.log(state);
+      //console.log(state);
       return {
         ...state
       };

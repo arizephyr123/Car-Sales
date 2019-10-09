@@ -5,7 +5,10 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-const App = () => {
+const App = state => {
+  console.log(state);
+
+  //moved to initialState in reducer.js
   // const state = {
   //   additionalPrice: 0,
   //   car: {
