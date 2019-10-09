@@ -35,5 +35,7 @@ export const reducer = (state = InitialState, action) => {
       return {
         ...state
       };
+      default:
+          return state;
   }
 };
