@@ -1,4 +1,5 @@
 import { ADD_FEATURE, REMOVE_ADDED } from '../actions/actions'
+import { statement } from '@babel/template';
 
 const InitialState = {
   additionalPrice: 0,
@@ -24,10 +25,16 @@ export const reducer = (state = InitialState, action) => {
       // remove from additional feature
       // move to added feature
       // update amounts
-      //console.log(state);
+      console.log('ADD_FEATURE', action.payload);
       return {
-        ...state
-      };
+        ...state, 
+        additionalPrice : (action.payload.store.price),
+        car: {
+            ...state.car,
+            features: [...state.car.features,action.payload]},
+            
+        store: state.store.filter(item => item.id != action.payload.id)
+    }
 
       case REMOVE_ADDED:
       // remove from added feature

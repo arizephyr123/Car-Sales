@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addFeature, removeAdded } from '../actions/actions'
 
 const Header = props => {
-  console.log(props)
+  //console.log(props)
   return (
     <>
       <figure className="image is-128x128">
@@ -16,7 +16,7 @@ const Header = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state);
   return{
   additionalPrice: state.additionalPrice,
   car: state.car,
